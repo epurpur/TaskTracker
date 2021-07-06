@@ -9,13 +9,16 @@ const AddTask = ({ onAdd }) => {
     const onSubmit = (e) => {
         e.preventDefault()
 
+        //check for text in 'task' box
         if(!text) {
             alert('Please add a task')
             return
         }
 
+        // pass in object to onAdd function
         onAdd({ text, day, reminder })
 
+        // resets values of text boxes to empty and check box to unchecked
         setText('')
         setDay('')
         setReminder(false)
